@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    let diary :[Diary]
+    @Binding var diarys : [Diary]
     
     var body: some View {
         List{
-            ForEach(diary) { diary in
-                NavigationLink(destination: Text(diary.title).background(Color.red)){
+            ForEach($diarys) { $diary in
+                NavigationLink(destination: DiaryDetail(diarys: $diary)){
                     CardView(diary: diary)
                 }
             }
         }
         .navigationTitle("日記一覧")
+        .toolbar{
+            Button(action: {
+                
+            }){
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("Create a new Diary")
+        }
         
     }
 }
@@ -26,7 +34,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ContentView(diary: Diary.sampleData)
+            ContentView(diarys: .constant(Diary.sampleData))
         }
     }
 }

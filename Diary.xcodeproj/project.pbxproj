@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08177F74298BF056006DFC0B /* DiaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08177F73298BF056006DFC0B /* DiaryDetail.swift */; };
+		08177F76298C0F79006DFC0B /* DairyEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08177F75298C0F79006DFC0B /* DairyEditView.swift */; };
 		08569939298B7D4100DCCC67 /* DiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08569938298B7D4100DCCC67 /* DiaryApp.swift */; };
 		0856993B298B7D4100DCCC67 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0856993A298B7D4100DCCC67 /* ContentView.swift */; };
 		0856993D298B7D4300DCCC67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0856993C298B7D4300DCCC67 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08177F73298BF056006DFC0B /* DiaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetail.swift; sourceTree = "<group>"; };
+		08177F75298C0F79006DFC0B /* DairyEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DairyEditView.swift; sourceTree = "<group>"; };
 		08569935298B7D4100DCCC67 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08569938298B7D4100DCCC67 /* DiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryApp.swift; sourceTree = "<group>"; };
 		0856993A298B7D4100DCCC67 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				0856993C298B7D4300DCCC67 /* Assets.xcassets */,
 				0856993E298B7D4300DCCC67 /* Preview Content */,
 				08569965298B808100DCCC67 /* CardView.swift */,
+				08177F73298BF056006DFC0B /* DiaryDetail.swift */,
+				08177F75298C0F79006DFC0B /* DairyEditView.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08177F74298BF056006DFC0B /* DiaryDetail.swift in Sources */,
 				0856993B298B7D4100DCCC67 /* ContentView.swift in Sources */,
 				08569939298B7D4100DCCC67 /* DiaryApp.swift in Sources */,
 				08569966298B808100DCCC67 /* CardView.swift in Sources */,
+				08177F76298C0F79006DFC0B /* DairyEditView.swift in Sources */,
 				08569963298B7EE200DCCC67 /* Diary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
