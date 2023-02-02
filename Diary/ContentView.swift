@@ -8,19 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    let diary :[Diary]
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List{
+            ForEach(diary) { diary in
+                NavigationLink(destination: Text(diary.title).background(Color.red)){
+                    CardView(diary: diary)
+                }
+            }
         }
-        .padding()
+        .navigationTitle("日記一覧")
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationView{
+            ContentView(diary: Diary.sampleData)
+        }
     }
 }

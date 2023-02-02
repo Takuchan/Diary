@@ -11,7 +11,10 @@ import SwiftUI
 struct DiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                ContentView(diary: Diary.sampleData)
+            }
+            
         }
     }
 }
