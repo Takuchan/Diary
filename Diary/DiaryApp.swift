@@ -9,11 +9,29 @@ import SwiftUI
 
 @main
 struct DiaryApp: App {
-    @State private var diary = Diary.sampleData
+    @StateObject private var store = DiaryStore()
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                ContentView(diarys: $diary)
+                
+                ContentView(diarys: $store.diary){
+                    DiaryStore.save(diary: store.diary){ result in
+                        if case .failure(let failure) = result {
+                            fatalError(failure.localizedDescription)
+                        }
+                         
+                    }
+                }
+            }
+            .onAppear{
+                DiaryStore.load{ result in
+                    switch result{
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    case .success(let diary):
+                        store.diary = diary
+                    }
+                }
             }
             
         }

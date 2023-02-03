@@ -1,13 +1,10 @@
 //
 //  Diary.swift
 //  Diary
-//
-//  Created by 松村拓洋 on 2023/02/02.
-//
 
 import Foundation
 
-struct Diary:Identifiable{
+struct Diary:Identifiable,Codable{
     let id :UUID
     var title: String
     var subtitle: String
@@ -29,7 +26,7 @@ struct Diary:Identifiable{
 
 }
 extension Diary{
-    struct Attendee: Identifiable {
+    struct Attendee: Identifiable ,Codable {
         let id: UUID
         var name: String
         
@@ -43,19 +40,34 @@ extension Diary{
         var subtitle : String = ""
         var detail : String = ""
         var attendees : [Attendee] = []
+        var currentTime = Date()
         var lengthInEnjoy :Double = 5
     }
     var data: Data{
         //つまりはここで10~30行目のデータを一つの塊として取り出せるようにしているというわけさ
-        Data(title: title,subtitle: subtitle, detail: detail, attendees: attendees,lengthInEnjoy: Double(lengthInEnjoy))
+        Data(title: title,subtitle: subtitle, detail: detail, attendees: attendees,currentTime: currentTime,lengthInEnjoy: Double(lengthInEnjoy))
     }
+    
     mutating func update(from data: Data) {
         title = data.title
         subtitle = data.subtitle
         detail = data.detail
         attendees = data.attendees
+        currentTime = Date()
         lengthInEnjoy = Int(data.lengthInEnjoy)
     }
+    
+    init(data: Data) {
+        id = UUID()
+        title = data.title
+        subtitle = data.subtitle
+        detail = data.detail
+        attendees = data.attendees
+        currentTime = data.currentTime
+        lengthInEnjoy = Int(data.lengthInEnjoy)
+    }
+    
+  
 }
 
 extension Diary{
